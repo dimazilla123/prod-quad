@@ -7,8 +7,6 @@
 
 #include "bool.h"
 
-static const double EPS = 1e-5;
-
 /*!
  * @fn int compare(double a, double b)
  * @brief Compare doubles
@@ -34,4 +32,5 @@ int compare(double a, double b);
 
 bool convertdouble(const char* s, double *out);
 
+double relative_eps(double x);
 #endif
