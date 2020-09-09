@@ -3,8 +3,8 @@
 #include <math.h>
 #include "double_utils.h"
 
-static const double EPS = 1e-5;
-
+// Returns exponent of double
+// TODO: extract exponent from format
 double get_eps(double x)
 {
     x = fabs(x);
