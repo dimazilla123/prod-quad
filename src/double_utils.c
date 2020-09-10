@@ -27,7 +27,9 @@ double get_eps(double x)
 
 int compare(double a, double b)
 {
+    //const double EPS = 1e-10;
     double eps = get_eps(b - a);
+    //eps = EPS;
     if (2 * (b - a) >= eps)
         return 1;
     if (2 * (a - b) >= eps)
