@@ -11,7 +11,7 @@ int solve(double a, double b, double c, double* x1, double* x2)
     {
         if (compare(0, b) == 0)
             return (compare(0, c) == 0 ? INFINITE_SOLUTIONS : 0);
-        *x1 = c / b;
+        *x1 = -c / b;
         return 1;
     }
     double D = b * b - 4 * a * c;
