@@ -32,5 +32,14 @@ int compare(double a, double b);
 
 bool convertdouble(const char* s, double *out);
 
-double relative_eps(double x);
+/*!
+ * @fn double get_eps(double x)
+ * @brief Get exponent in standart number form
+ *
+ * @param x real number
+ * @return STEP^y, that STEP >= x * STEP^y
+ */
+
+double get_eps(double x);
+
 #endif

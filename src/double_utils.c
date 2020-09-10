@@ -3,23 +3,23 @@
 #include <math.h>
 #include "double_utils.h"
 
-// Returns exponent of double
 // TODO: extract exponent from format
 double get_eps(double x)
 {
+    const double STEP = 10;
     x = fabs(x);
     double ans = 1;
     if (x == 0)
         return ans;
     while (x < 1)
     {
-        ans /= 10;
-        x *= 10;
+        ans /= STEP;
+        x *= STEP;
     }
-    while (x > 10)
+    while (x > STEP)
     {
-        ans *= 10;
-        x /= 10;
+        ans *= STEP;
+        x /= STEP;
     }
     return ans;
 }
