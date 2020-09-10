@@ -21,12 +21,16 @@ int solve(double a, double b, double c, double* x1, double* x2)
         case -1:
             return 0;
         case 0:
-            *x1 = x0;
+        {
+            *x1 = *x2 = x0;
             return 1;
+        }
         case 1:
+        {
             D = fabs(sqrt(D) / (2 * a));
             *x1 = x0 - D;
             *x2 = x0 + D;
             return 2;
+        }
     }
 }

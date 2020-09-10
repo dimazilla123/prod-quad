@@ -11,5 +11,7 @@ set(SRC
 
 add_executable(quad ${SRC})
 add_executable(test_double_utils src/test_double_utils.c src/double_utils.c)
+add_executable(test_solver src/test_solver.c src/solver.c src/double_utils.c)
+target_link_libraries(test_solver m)
 target_link_libraries(quad m)
 target_link_libraries(test_double_utils m)
