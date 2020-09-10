@@ -5,7 +5,6 @@
 
 int solve(double a, double b, double c, double* x1, double* x2)
 {
-    double D = 0, x0 = 0;
     if (x1 == NULL || x2 == NULL)
         return ERROR_DURING_SOLUTION;
     if (compare(0, a) == 0)
@@ -15,8 +14,8 @@ int solve(double a, double b, double c, double* x1, double* x2)
         *x1 = c / b;
         return 1;
     }
-    D = b * b - 4 * a * c;
-    x0 = -b / (2 * a);
+    double D = b * b - 4 * a * c;
+    double x0 = -b / (2 * a);
     switch (compare(0, D))
     {
         case -1:

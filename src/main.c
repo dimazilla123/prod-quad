@@ -18,9 +18,26 @@ void exit_with_userline()
     exit(0);
 }
 
+void print_solutions(double a, double b, double c)
+{
+    double xs[2] = {0, 0};
+    int solutions = solve(a, b, c, xs, xs + 1);
+    if (solutions == INFINITE_SOLUTIONS)
+        printf("INF\n");
+    else if (solutions == ERROR_DURING_SOLUTION)
+        printf("An error has occured\n");
+    else
+    {
+        for (int i = 0; i < solutions; ++i)
+            printf("%le\n", xs[i]);
+    }
+}
+
 int main(int argc, char *argv[])
 {
-    double a = 0, b = 0, c = 0;
+    double a = 0,
+           b = 0,
+           c = 0;
     double xs[2] = {0, 0};
     progname = argv[0];
 
@@ -42,16 +59,7 @@ int main(int argc, char *argv[])
         exit_with_userline();
     }
 
-    int solutions = solve(a, b, c, xs, xs + 1);
-    if (solutions == INFINITE_SOLUTIONS)
-        printf("INF\n");
-    else if (solutions == ERROR_DURING_SOLUTION)
-        printf("An error has occured\n");
-    else
-    {
-        for (int i = 0; i < solutions; ++i)
-            printf("%le\n", xs[i]);
-    }
+    print_solutions(a, b, c);
 
     return 0;
 }
