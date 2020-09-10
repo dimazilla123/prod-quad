@@ -42,4 +42,13 @@ bool convertdouble(const char* s, double *out);
 
 double get_eps(double x);
 
+/*!
+ * @fn double random_double
+ * @brief return random double from [-1, -1]
+ *
+ * @return random double
+ */
+
+double random_double();
+
 #endif

@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <float.h>
 #include <math.h>
+#include <stdlib.h>
 #include "double_utils.h"
 
 // TODO: extract exponent from format
@@ -37,4 +38,9 @@ int compare(double a, double b)
 bool convertdouble(const char* s, double *out)
 {
     return sscanf(s, "%lg", out) == 1;
+}
+
+double random_double()
+{
+    return (rand() % 2 == 0 ? -1 : 1) * (double)rand() / RAND_MAX;
 }
